@@ -1,0 +1,78 @@
+[
+  {
+    "foreground": "#f44336",
+    "background": "#d32f2f"
+  },
+  {
+    "foreground": "#E91E63",
+    "background": "#C2185B"
+  },
+  {
+    "foreground": "#9C27B0",
+    "background": "#7B1FA2"
+  },
+  {
+    "foreground": "#673AB7",
+    "background": "#512DA8"
+  },
+  {
+    "foreground": "#3F51B5",
+    "background": "#303F9F"
+  },
+  {
+    "foreground": "#2196F3",
+    "background": "#1976D2"
+  },
+  {
+    "foreground": "#03A9F4",
+    "background": "#0288D1"
+  },
+  {
+    "foreground": "#00BCD4",
+    "background": "#0097A7"
+  },
+  {
+    "foreground": "#009688",
+    "background": "#00796B"
+  },
+  {
+    "foreground": "#4CAF50",
+    "background": "#388E3C"
+  },
+  {
+    "foreground": "#8BC34A",
+    "background": "#689F38"
+  },
+  {
+    "foreground": "#CDDC39",
+    "background": "#AFB42B"
+  },
+  {
+    "foreground": "#FFEB3B",
+    "background": "#FBC02D"
+  },
+  {
+    "foreground": "#FFC107",
+    "background": "#FFA000"
+  },
+  {
+    "foreground": "#FF9800",
+    "background": "#F57C00"
+  },
+  {
+    "foreground": "#FF5722",
+    "background": "#E64A19"
+  },
+  {
+    "foreground": "#795548",
+    "background": "#5D4037"
+  },
+  {
+    "foreground": "#9E9E9E",
+    "background": "#616161"
+  },
+  {
+    "foreground": "#607D8B",
+    "background": "#455A64"
+  }
+]

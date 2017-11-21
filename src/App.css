@@ -1,0 +1,18 @@
+.app-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.control-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.icon-renderer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
