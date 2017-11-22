@@ -49,25 +49,25 @@ class App extends React.Component {
 
   onBackgroundChange = color => {
     this.setState({
-      background: color.target.value,
+      background: color.hex,
     })
   }
 
   onForegroundChange = color => {
     this.setState({
-      foreground: color.target.value,
+      foreground: color.hex,
     })
 
     if (!this.state.separateForeground) {
       this.setState({
-        foreground2: color.target.value,
+        foreground2: color.hex,
       })
     }
   }
 
   onForeground2Change = color => {
     this.setState({
-      foreground2: color.target.value,
+      foreground2: color.hex,
     })
   }
 
