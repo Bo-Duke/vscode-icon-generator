@@ -8,6 +8,7 @@ Features :
 - [x] Generate random icon color scheme :game_die:
 - [x] Simple color picker :art:
 - [x] Color picker with material design colors built-in :art:
-- [ ] Download SVG icon :arrow_down:
+- [x] Download SVG icon :arrow_down:
 - [ ] Download png icon (not sure if possible) :arrow_down:
+- [ ] Beautiful user interface :art:
 - [ ] Download native icon formats (not sure if possible) :arrow_down:
