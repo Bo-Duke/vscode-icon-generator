@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOMServer from 'react-dom/server'
 import IconRenderer from './IconRenderer'
 import ControlsRenderer from './ControlsRenderer'
 import COLORS from './material-colors.json'
@@ -29,9 +30,7 @@ class App extends React.Component {
     this.setState({
       background,
       foreground,
-      foreground2: this.state.separateForeground
-        ? this.randomColor().foreground
-        : foreground,
+      foreground2: this.state.separateForeground ? this.randomColor().foreground : foreground,
     })
   }
 
@@ -87,12 +86,31 @@ class App extends React.Component {
           separateForeground={this.state.separateForeground}
           size={this.state.size}
         />
-        <IconRenderer
-          background={this.state.background}
-          foreground={this.state.foreground}
-          foreground2={this.state.foreground2}
-          size={this.state.size}
-        />
+        <div className="icon-renderer">
+          <IconRenderer
+            background={this.state.background}
+            foreground={this.state.foreground}
+            foreground2={this.state.foreground2}
+            size={this.state.size}
+          />
+        </div>
+        <a
+          href-lang="image/svg+xml"
+          href={`data:image/svg+xml;base64,${new Buffer(
+            ReactDOMServer.renderToStaticMarkup(
+              <IconRenderer
+                background={this.state.background}
+                foreground={this.state.foreground}
+                foreground2={this.state.foreground2}
+                size={this.state.size}
+              />,
+            ),
+          ).toString('base64')}`}
+          download="icon.svg"
+          title="icon.svg"
+        >
+          Download SVG icon
+        </a>
       </div>
     )
   }
