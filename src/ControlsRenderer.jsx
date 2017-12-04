@@ -32,7 +32,13 @@ class ControlsRenderer extends React.Component {
     })
   }
 
-  renderColorPicker = (color, isForeground, colorHandler, clickHandler, displayed) => {
+  renderColorPicker = (
+    color,
+    isForeground,
+    colorHandler,
+    clickHandler,
+    displayed,
+  ) => {
     return (
       <div>
         <div className="color-button" onClick={clickHandler}>
@@ -47,7 +53,9 @@ class ControlsRenderer extends React.Component {
           <div className="color-picker">
             <div className="color-picker-close" onClick={this.handleClose} />
             <SketchPicker
-              presetColors={COLORS.map(color => color[isForeground ? 'foreground' : 'background'])}
+              presetColors={COLORS.map(
+                color => color[isForeground ? 'foreground' : 'background'],
+              )}
               color={color}
               onChange={colorHandler}
               disableAlpha
@@ -76,7 +84,7 @@ class ControlsRenderer extends React.Component {
     return (
       <div className="control-form">
         <div>
-          <label htmlFor="separate">Separate the two foregrounds? </label>
+          <label htmlFor="separate">Separate foregrounds? </label>
           <input
             value={separateForeground}
             onChange={onSeparateForeground}
@@ -84,7 +92,7 @@ class ControlsRenderer extends React.Component {
             name="separate"
           />
         </div>
-        <div>
+        <div className="color-picker-label">
           Foreground :
           {this.renderColorPicker(
             foreground,
@@ -95,7 +103,7 @@ class ControlsRenderer extends React.Component {
           )}
         </div>
         {separateForeground ? (
-          <div>
+          <div className="color-picker-label">
             Foreground 2 :
             {this.renderColorPicker(
               foreground2,
@@ -108,7 +116,7 @@ class ControlsRenderer extends React.Component {
         ) : (
           ''
         )}
-        <div>
+        <div className="color-picker-label">
           Background :
           {this.renderColorPicker(
             background,
@@ -119,8 +127,16 @@ class ControlsRenderer extends React.Component {
           )}
         </div>
         Size:
-        <input value={size} onChange={onSizeChange} type="range" min="80" max="500" />
-        <button onClick={onRandom}>Random</button>
+        <input
+          value={size}
+          onChange={onSizeChange}
+          type="range"
+          min="80"
+          max="500"
+        />
+        <div className="random-button">
+          <button onClick={onRandom}>Random</button>
+        </div>
       </div>
     )
   }

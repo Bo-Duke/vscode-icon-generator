@@ -1,10 +1,15 @@
 .app-wrapper {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    'head head'
+    'form icon-render';
+  grid-template-rows: 90px 1fr;
+  grid-template-columns: 200px 1fr;
 }
 
 .control-form {
+  grid-area: form;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -12,9 +17,18 @@
 }
 
 .icon-renderer {
+  grid-area: icon-render;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+}
+
+.header {
+  grid-area: head;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4em;
 }
 
 /* Color picker */
@@ -45,4 +59,80 @@
   right: 0px;
   bottom: 0px;
   left: 0px;
+}
+
+.color-picker-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+}
+
+/* Download button 
+source (because I'm lazy enough to make a simple button) https://codepen.io/mohaiman/pen/jqKzVb?editors=0100
+*/
+.download-button {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border-radius: 4px;
+  background-color: #d35400;
+  border: none;
+  padding: 20px;
+  width: 170px;
+  margin-top: 20px;
+  transition: all 0.5s;
+  display: block;
+  font-size: 0.9em;
+}
+
+.download-button > span {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.download-button > span:after {
+  content: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHBhdGggZD0iTTE5IDloLTRWM0g5djZINWw3IDcgNy03ek01IDE4djJoMTR2LTJINXoiLz4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==);
+  position: absolute;
+  opacity: 0;
+  top: -3px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.download-button:hover span {
+  padding-right: 30px;
+}
+
+.download-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.random-button {
+  margin-top: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.random-button > button {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  border-radius: 4px;
+  background-color: #006dd3;
+  border: none;
+  padding: 5px;
+  transition: background-color 0.5s;
+}
+
+.random-button > button:hover {
+  background-color: #53acff;
+}
+
+.control-form input[type='range'] {
+  width: 100%;
+  margin-left: 0;
 }

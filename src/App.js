@@ -30,7 +30,9 @@ class App extends React.Component {
     this.setState({
       background,
       foreground,
-      foreground2: this.state.separateForeground ? this.randomColor().foreground : foreground,
+      foreground2: this.state.separateForeground
+        ? this.randomColor().foreground
+        : foreground,
     })
   }
 
@@ -73,19 +75,40 @@ class App extends React.Component {
   render() {
     return (
       <div className="app-wrapper">
-        <ControlsRenderer
-          onForegroundChange={this.onForegroundChange}
-          onBackgroundChange={this.onBackgroundChange}
-          onForeground2Change={this.onForeground2Change}
-          onSizeChange={this.onSizeChange}
-          onSeparateForeground={this.onSeparateForeground}
-          onRandom={this.onRandom}
-          background={this.state.background}
-          foreground={this.state.foreground}
-          foreground2={this.state.foreground2}
-          separateForeground={this.state.separateForeground}
-          size={this.state.size}
-        />
+        <div className="header">VSCode icon generator</div>
+        <div>
+          <ControlsRenderer
+            onForegroundChange={this.onForegroundChange}
+            onBackgroundChange={this.onBackgroundChange}
+            onForeground2Change={this.onForeground2Change}
+            onSizeChange={this.onSizeChange}
+            onSeparateForeground={this.onSeparateForeground}
+            onRandom={this.onRandom}
+            background={this.state.background}
+            foreground={this.state.foreground}
+            foreground2={this.state.foreground2}
+            separateForeground={this.state.separateForeground}
+            size={this.state.size}
+          />
+          <a
+            className="download-button"
+            href-lang="image/svg+xml"
+            href={`data:image/svg+xml;base64,${new Buffer(
+              ReactDOMServer.renderToStaticMarkup(
+                <IconRenderer
+                  background={this.state.background}
+                  foreground={this.state.foreground}
+                  foreground2={this.state.foreground2}
+                  size={this.state.size}
+                />,
+              ),
+            ).toString('base64')}`}
+            download="icon.svg"
+            title="icon.svg"
+          >
+            <span>Download SVG icon</span>
+          </a>
+        </div>
         <div className="icon-renderer">
           <IconRenderer
             background={this.state.background}
@@ -94,23 +117,6 @@ class App extends React.Component {
             size={this.state.size}
           />
         </div>
-        <a
-          href-lang="image/svg+xml"
-          href={`data:image/svg+xml;base64,${new Buffer(
-            ReactDOMServer.renderToStaticMarkup(
-              <IconRenderer
-                background={this.state.background}
-                foreground={this.state.foreground}
-                foreground2={this.state.foreground2}
-                size={this.state.size}
-              />,
-            ),
-          ).toString('base64')}`}
-          download="icon.svg"
-          title="icon.svg"
-        >
-          Download SVG icon
-        </a>
       </div>
     )
   }
