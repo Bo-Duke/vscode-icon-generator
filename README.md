@@ -1,6 +1,7 @@
 # VSCode custom icon generator
 
-Simple app that makes creating a new VSCode icon color scheme easier. :art:
+[Simple app](http://bouveronmaxi.me/vscode-icon-generator/) that makes creating
+a new VSCode icon color scheme easier. :art:
 
 Widely inspired by [vscode-icons](https://github.com/dhanishgajjar/vscode-icons)
 
@@ -12,5 +13,6 @@ Features :
 * [x] Download SVG icon :arrow_down:
 * [ ] Download png icon (it _may_ be possible) :arrow_down:
 * [x] "Beautiful" user interface :art:
-* [ ] Deploy app on Github pages :rocket:
+* [x] Deploy app on Github pages :rocket: ->
+      [HERE](http://bouveronmaxi.me/vscode-icon-generator/)
 * [ ] Download native icon formats (pretty sure it's not possible) :arrow_down:
