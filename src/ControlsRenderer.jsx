@@ -126,14 +126,16 @@ class ControlsRenderer extends React.Component {
             this.state.displayBackground,
           )}
         </div>
-        Size:
-        <input
-          value={size}
-          onChange={onSizeChange}
-          type="range"
-          min="80"
-          max="500"
-        />
+        <div>
+          Size:
+          <input
+            value={size}
+            onChange={onSizeChange}
+            type="range"
+            min="80"
+            max="500"
+          />
+        </div>
         <div className="random-button">
           <button onClick={onRandom}>Random</button>
         </div>
